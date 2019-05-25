@@ -25,7 +25,7 @@ To check the dependencies, use the commands `$ python --version`, `$ pip --versi
 3. Solve the dependency of the modules with:
 
   ```
-  $ python manage.py migrate
+  $ python manage.py migrate --run-syncdb
   ```
 
 ## Use
