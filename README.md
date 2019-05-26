@@ -22,7 +22,13 @@ To check the dependencies, use the commands `$ python --version`, `$ pip --versi
   $ cd simplemooc
   ```
 
-3. Solve the dependency of the modules with:
+3. Solve the dependencys:
+
+  ```
+  $ pip install -r requirements.txt
+  ```
+
+4. Create and config database
 
   ```
   $ python manage.py migrate --run-syncdb
