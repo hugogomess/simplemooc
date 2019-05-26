@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
 </head>
 <body>
-<div class="header">
+<header class="header">
     <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
         <a class="pure-menu-heading" href="{% url 'core:home' %}">SIMPLE MOOC</a>
         <ul>
@@ -19,15 +19,15 @@
             <li><a href="{% url 'core:contact' %}">Contato</a></li>
         </ul>
     </div>
-</div>
+</header>
 
 <div class="content">
     {% block content %}{% endblock %}
 </div>
 
-<div class="footer">
+<footer class="footer">
     Simple MOOC - Uma simples plataforma de ensino a distância
-</div>
+</footer>
 <script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
 </body>
 </html>

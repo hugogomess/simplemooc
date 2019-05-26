@@ -10,14 +10,14 @@ body {
 .l-box {
     padding: 1em;
 }
-.header {
+header {
     margin: 0 0;
 }
-.header .pure-menu {
+header .pure-menu {
     padding: 0.5em;
 }
-.header .pure-menu li a:hover,
-.header .pure-menu li a:focus {
+header .pure-menu li a:hover,
+header .pure-menu li a:focus {
     background: none;
     border: none;
     color: #aaa;
@@ -66,7 +66,7 @@ body .primary-button {
     display: inline;
     font-weight: normal;
 }
-.footer {
+footer {
     background: #111;
     color: #666;
     text-align: center;

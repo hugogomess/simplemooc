@@ -6,8 +6,7 @@
 <div class="pure-g-r content-ribbon">
     <div class="pure-u-1">
         <div class="l-box">
-            <h4 class="content-subhead">Listagem de Cursos do SimpleMOOC</h4>
-            <p>Abaixo a lista de cursos disponíveis na plataforma</p>
+            <h3>Listagem de Cursos do SimpleMOOC</h3>
         </div>
     </div>
 </div>
@@ -18,9 +17,9 @@
             <div class="l-box">
                 <a href="">
                     {% if course.image %}
-                        <img src="{{ course.image.url }}" alt="{{ course.name }}">
+                        <a href="{{ course.get_absolute_url }}"><img src="{{ course.image.url }}" alt="{{ course.name }}"></a>
                     {% else %}
-                        <img src="{% static 'img/course-image.png' %}" alt="{{ course.name }}">
+                        <a href="{{ course.get_absolute_url }}"><img src="{% static 'img/course-image.png' %}" alt="{{ course.name }}"></a>
                     {% endif %}
                 </a>
             </div>
@@ -28,8 +27,17 @@
 
         <div class="pure-u-2-3">
             <div class="l-box">
-                <h4 class="content-subhead"><a href="">{{ course.name }}</a></h4>
-                {{ course.description | linebreaks }}
+                <h4 class="content-subhead">{{ course.name }}</h4>
+                {{ course.long_description | linebreaks }}
+                <a href="{{ course.get_absolute_url }}" class="pure-button primary-button">Sobre</a>
+            </div>
+        </div>
+    </div>
+{% empty %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-3-5">
+            <div>
+                <h2>Desculpe, nenhum curso disponível :(</h2>
             </div>
         </div>
     </div>
