@@ -3,6 +3,7 @@ from .forms import RegisterForm, EditAccountForm
 from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 
 def register(request):
     template_name = 'registration/register.html'
@@ -51,5 +52,17 @@ def edit(request):
 @login_required
 def edit_password(request):
     template_name = 'edit_password.html'
+    context = {}
 
-    return render(request, template_name)
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+
+        if form.is_valid():
+            form.save()
+            context['success'] = True
+    else:
+        form = PasswordChangeForm(user = request.user)
+
+    context['form'] = form
+
+    return render(request, template_name, context)
