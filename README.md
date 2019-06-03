@@ -34,6 +34,12 @@ To check the dependencies, use the commands `$ python --version`, `$ pip --versi
   $ python manage.py migrate --run-syncdb
   ```
 
+5. Create a super user if you want get access to admin area (you need this to create a course)
+
+  ```
+  $ python manage.py createsuperuser
+  ```
+
 ## Use
 
 1. Inside the project root folder, run:
@@ -43,5 +49,7 @@ To check the dependencies, use the commands `$ python --version`, `$ pip --versi
   ```
 
 2. In your browser, open [http://localhost:8000](http://localhost:8000).
+
+3. If you want create a course, open [http://localhost:8000/admin](http://localhost:8000/admin).
 
 ----------
